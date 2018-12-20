@@ -35,10 +35,14 @@ VALUES (3, "Privatefor-Profit");
 
 select * from school_name;
 
-select a.school_name, a.school_id,b.rank,a.private_public, c.description 
+select * from school_scores
+
+select a.school_name, a.school_id,b.rank,a.private_public, c.description ,d.sat_score
 from school_name a 
 join school_rank b on a.school_name = b.name
 join static_pvt_pub c on  a.private_public=c.private_public
+join school_scores d on a.school_id=d.school_id
+order by rank 
 
 select * from static_pvt_pub;
 
